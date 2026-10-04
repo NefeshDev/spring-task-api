@@ -31,7 +31,7 @@ public class User {
     @Column(name = "user_email")
     private String email;
 
-    @Column(name = "user_email")
+    @Column(name = "user_password")
     private String password;
 
     @OneToMany(mappedBy = "user")

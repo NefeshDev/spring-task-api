@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import com.nefeshdev.chama.entity.Enum.StatusTask;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
@@ -11,8 +12,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.Builder;
 
+@Entity
+@Table(name = "tb_task")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

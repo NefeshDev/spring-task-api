@@ -1,8 +1,11 @@
 package com.nefeshdev.chama.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.nefeshdev.chama.dto.register.RegisterRequestDTO;
+import com.nefeshdev.chama.entity.Task;
 import com.nefeshdev.chama.entity.User;
 import com.nefeshdev.chama.repository.UserRepository;
 
@@ -15,13 +18,13 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void criarUser(RegisterRequestDTO dto) {
+    public User criarUser(RegisterRequestDTO dto) {
         User newUser = User.builder()
                 .name(dto.name())
                 .email(dto.email())
                 .password(dto.password())
                 .build();
-        userRepository.save(newUser);
+        return userRepository.save(newUser);
     }
 
 }
