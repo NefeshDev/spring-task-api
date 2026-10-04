@@ -1,0 +1,9 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5434/db_tasks
+        username: dev
+        password: "${TESTE_DATABASE_PASSWORD}"
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
