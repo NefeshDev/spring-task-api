@@ -9,12 +9,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tb_user")
+@Getter
+@Setter
 public class User {
 
     @Id
@@ -33,4 +37,12 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Task> task = new ArrayList<>();
 
+    @Builder
+    public User(UUID id, String name, String email, String password, List<Task> task) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.task = task != null ? task : new ArrayList<>();
+    }
 }

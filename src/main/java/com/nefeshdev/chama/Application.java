@@ -1,10 +1,8 @@
 package com.nefeshdev.chama;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import io.github.cdimascio.dotenv.Dotenv;
 
 @SpringBootApplication
 public class Application {
